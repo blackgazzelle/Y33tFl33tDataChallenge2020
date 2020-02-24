@@ -1,6 +1,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
+import seaborn as sns
 import scipy
 from sklearn import datasets, linear_model
 from sklearn.model_selection import train_test_split
@@ -8,10 +9,9 @@ from sklearn.linear_model import LinearRegression, LogisticRegression
 from sklearn import preprocessing
 from sklearn.preprocessing import PolynomialFeatures
 
-df = pd.read_csv("Data_Level2_UMD-ARCH_DCBuildingEnergyBenchmarks.csv")
 
-
-
+datafile = input()
+df = pd.read_csv(datafile)
 
 #print(df.head())
 
@@ -33,7 +33,10 @@ X = preprocessing.scale(X)
 #y contains our labels / Truth values
 y = np.array(df['Weather_Normalized_Site_EUI_KBTU_Ft'])
 
-print(scipy.stats.pearsonr(X,y))
+plt.figure(figsize=(12,10))
+cor = df.corr()
+sns.heatmap(cor, annot=True, cmap=plt.cm.Reds)
+plt.show()
 
 # Split the data into training and test sets
 # 20% of the data is set aside as testing data. We don't train on the testing data so that we

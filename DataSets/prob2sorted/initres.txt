@@ -1,0 +1,48 @@
+DistributionCenter.csv
+accuracy 0.9725208926829796
+
+FinancialOffice.csv
+accuracy 0.5263202393187254
+
+HospitalGeneralMedicalSurgical.csv
+accuracy -24.057067163055965
+
+Hotel.csv
+accuracy 0.2004538276545652
+
+K12School.csv
+accuracy -0.765415899952403
+
+MedicalOffice.csv
+accuracy -163.12279029897022
+
+MixedUseProperty.csv
+accuracy -1.3165171735705896
+
+MultifamilyHousing.csv
+accuracy 0.5612584884798109
+
+NonRefrigeratedWarehouse.csv
+accuracy 0.6604501592361387
+
+Other.csv
+accuracy nan
+
+ResidenceHallDormitory.csv
+accuracy -3404.981145851815
+
+RetailStore.csv
+accuracy 0.9055021868524926
+
+SeniorCareCommunity.csv
+accuracy 0.7972199162369573
+
+SupermarketGroceryStore.csv
+accuracy -0.17985875269616902
+
+WholesaleClubSupercenter.csv
+accuracy nan
+
+WorshipFacility.csv
+accuracy 0.9045623898108881
+

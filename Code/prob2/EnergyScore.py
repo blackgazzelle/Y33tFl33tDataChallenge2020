@@ -2,7 +2,7 @@ import pandas as pd
 import os
 import matplotlib.pyplot as plt
 
-directory = "../../DataSets/prob2sorted"
+directory = "../../DataSets/prob2sorted/"
 scores=[]
 names=os.listdir(directory)
 i=0

@@ -17,7 +17,7 @@ df = pd.read_csv(datafile)
 #print(df.head())
 
 
-df = df[['Weather_Normalized_Site_EUI_KBTU_Ft','Year_Built','Tax_Record_Floor_Area','Recorded_Building_Gross_Floor_Area','Water_Use_All_Water_Sources_Kgal','Electricity_Use_Grid_Kwh','Natural_Gas_Use_Therms']]
+df = df[['Weather_Normalized_Site_EUI_KBTU_Ft','Postal_Code', 'Year_Built','Tax_Record_Floor_Area','Recorded_Building_Gross_Floor_Area','Water_Use_All_Water_Sources_Kgal','Electricity_Use_Grid_Kwh','Natural_Gas_Use_Therms']]
 
 
 #print(df.head())
@@ -67,11 +67,20 @@ print()
 
 #print("coefficients: \n", clf.coef_)
 
-plt.figure(figsize=(12,10))
+plt.figure(figsize=(14,12))
 cor = df.corr()
 sns.heatmap(cor, annot=True, cmap=plt.cm.Blues).set_title(datafile)
+
+plot_margin = 0
+
+x0, x1, y0, y1 = plt.axis()
+plt.axis((x0 - plot_margin,
+          x1 + plot_margin,
+          y0 - plot_margin,
+          y1 + plot_margin))
+
 #plt.show()
-plt.savefig(datafile + str('.png'))
+plt.savefig(datafile[:-3] + str('png'), bbox_inches='tight')
 
 '''
 i_tree = 0

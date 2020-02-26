@@ -48,7 +48,6 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
 # instantiate a regressor
 #oddly, the decision tree excels where the linear fails and vice versa
 # the random forest isn't great for data mining...
-#clf = LinearRegression()
 reg1 = RandomForestRegressor()
 reg2 = LinearRegression()
 
@@ -71,7 +70,8 @@ print()
 plt.figure(figsize=(12,10))
 cor = df.corr()
 sns.heatmap(cor, annot=True, cmap=plt.cm.Blues).set_title(datafile)
-plt.show()
+#plt.show()
+plt.savefig(datafile + str('.png'))
 
 '''
 i_tree = 0

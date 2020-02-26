@@ -17,7 +17,7 @@ df = pd.read_csv(datafile)
 #print(df.head())
 
 
-df = df[['Weather_Normalized_Site_EUI_KBTU_Ft','Postal_Code','Year_Built','Tax_Record_Floor_Area','Recorded_Building_Gross_Floor_Area','Water_Use_All_Water_Sources_Kgal','Electricity_Use_Grid_Kwh','Natural_Gas_Use_Therms']]
+df = df[['Weather_Normalized_Site_EUI_KBTU_Ft','Year_Built','Tax_Record_Floor_Area','Recorded_Building_Gross_Floor_Area','Water_Use_All_Water_Sources_Kgal','Electricity_Use_Grid_Kwh','Natural_Gas_Use_Therms']]
 
 
 #print(df.head())
@@ -49,18 +49,22 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
 #oddly, the decision tree excels where the linear fails and vice versa
 # the random forest isn't great for data mining...
 #clf = LinearRegression()
-clf = RandomForestRegressor()
+reg1 = RandomForestRegressor()
+reg2 = LinearRegression()
 
 # Train / fit the model to the training data
-clf.fit(X_train, y_train)
+reg1.fit(X_train, y_train)
+reg2.fit(X_train, y_train)
 
 
 # Evaluate our model against the test data we set aside and print the accuracy.
-accuracy = clf.score(X_test, y_test)
+accuracy1 = reg1.score(X_test, y_test)
+accuracy2 = reg2.score(X_test, y_test)
 
 print(datafile)
-print("accuracy " + str(accuracy))
-
+print("forest accuracy " + str(accuracy1))
+print("linear accuracy " + str(accuracy2))
+print()
 
 #print("coefficients: \n", clf.coef_)
 

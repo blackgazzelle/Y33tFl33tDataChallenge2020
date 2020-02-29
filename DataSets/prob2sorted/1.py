@@ -17,7 +17,7 @@ df = pd.read_csv(datafile)
 #print(df.head())
 
 
-df = df[['Weather_Normalized_Site_EUI_KBTU_Ft','Postal_Code', 'Year_Built','Tax_Record_Floor_Area','Recorded_Building_Gross_Floor_Area','Water_Use_All_Water_Sources_Kgal','Electricity_Use_Grid_Kwh','Natural_Gas_Use_Therms']]
+df = df[['Energy_Star_Score', 'Weather_Normalized_Site_EUI_KBTU_Ft','Postal_Code', 'Year_Built','Tax_Record_Floor_Area','Recorded_Building_Gross_Floor_Area','Water_Use_All_Water_Sources_Kgal','Electricity_Use_Grid_Kwh','Natural_Gas_Use_Therms']]
 
 
 #print(df.head())
